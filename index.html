@@ -14,6 +14,26 @@
     line-height: 1.8;
     color: #f5f6f7;
   }
+  * {
+	transition:0.5s;
+  }
+  .profile-img {
+	display:inline;
+	height:20vh;
+	width:20vh
+  }
+  .smallIntro{
+	padding-bottom:2vh !important;
+  }
+  .smallIntro img{
+	height:10vh;
+	width:10vh;
+	margin-bottom:0px;
+	margin-top:8vh;
+  }
+  .smallIntro h1{
+	font-size:20px;
+  }
   .interest {
     display: inline-block;
     /* margin: 50px; */
@@ -76,13 +96,26 @@
     color: #1abc9c !important;
   }
   </style>
+	<script>
+		window.onscroll = function() {
+			introSize();
+		}
+		
+		function introSize(){
+			if(window.pageYOffset>10){
+				document.getElementById('intro').classList.add('smallIntro');
+			}else{
+				document.getElementById('intro').classList.remove('smallIntro');
+			}
+		}
+	</script>
 </head>
 <body>
 
 <!-- First Container -->
-<div class="container-fluid bg-1 text-center">
+<div class="container-fluid bg-1 text-center" id = "intro">
   
-  <img src="https://avatars.githubusercontent.com/u/34798203" class="img-responsive img-circle margin" style="display:inline;height:20vh;width:20vh " alt="Me" >
+  <img src="https://avatars.githubusercontent.com/u/34798203" class="img-responsive img-circle margin profile-img"alt="Me" >
   <h1>Anirban Mukherjee</h1>
 </div>
 
